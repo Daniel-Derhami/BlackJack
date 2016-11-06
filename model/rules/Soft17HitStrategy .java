@@ -1,6 +1,7 @@
 package black_jack.model.rules;
 
 import black_jack.model.Card;
+
 import black_jack.model.Player;
 
 public class Soft17HitStrategy implements IHitStrategy {
