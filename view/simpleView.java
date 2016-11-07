@@ -12,7 +12,14 @@ public class SimpleView implements IView {
     }
 
     @Override
-    public int GetInput() {}
+     public int GetInput() {
+        try {
+            return System.in.read();
+        } catch (java.io.IOException e) {
+            System.out.println("" + e);
+            return 0;
+        }
+    }
 
     @Override
     public void DisplayCard(BlackJack.model.Card a_card) {}
