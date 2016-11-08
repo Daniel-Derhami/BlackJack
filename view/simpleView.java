@@ -22,7 +22,14 @@ public class SimpleView implements IView {
     }
 
     @Override
-    public void DisplayCard(BlackJack.model.Card a_card) {}
+    public void DisplayCard(BlackJack.model.Card a_card) {
+        System.out.println("" + a_card.GetValue() + " of " + a_card.GetColor());
+    }
+
+    @Override
+    public void DisplayPlayerHand(Iterable<BlackJack.model.Card> a_hand, int a_score) {
+        DisplayHand("Player", a_hand, a_score);
+    }
 
     @Override
     public void DisplayPlayerHand(Iterable<BlackJack.model.Card> a_hand, int a_score) {}
