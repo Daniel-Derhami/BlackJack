@@ -32,15 +32,29 @@ public class SimpleView implements IView {
     }
 
     @Override
-    public void DisplayPlayerHand(Iterable<BlackJack.model.Card> a_hand, int a_score) {}
+    public void DisplayDealerHand(Iterable<BlackJack.model.Card> a_hand, int a_score) {
+        DisplayHand("Dealer", a_hand, a_score);
+    }
+
+    private void DisplayHand(String a_name, Iterable<BlackJack.model.Card> a_hand, int a_score) {
+        System.out.println(a_name + " Has: ");
+        for (BlackJack.model.Card c : a_hand) {
+            DisplayCard(c);
+        }
+        System.out.println("Score: " + a_score);
+        System.out.println("");
+    }
 
     @Override
-    public void DisplayDealerHand(Iterable<BlackJack.model.Card> a_hand, int a_score) {}
+    public void DisplayGameOver(boolean a_dealerIsWinner) {
+        System.out.println("GameOver: ");
+        if (a_dealerIsWinner) {
+            System.out.println("Dealer Won!");
+        } else {
+            System.out.println("You Won!");
+        }
 
-    private void DisplayHand(String a_name, Iterable<BlackJack.model.Card> a_hand, int a_score) {}
-
-    @Override
-    public void DisplayGameOver(boolean a_dealerIsWinner) {}
+    }
 
     
 }
